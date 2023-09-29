@@ -22,7 +22,7 @@ def speech_to_text(audio_binary):
         text = response.get('results').pop().get('alternatives').pop().get('transcript')
         print('recognised text: ', text)
         return text
-    return None
+    
 
 
 def text_to_speech(text, voice=""):
@@ -44,7 +44,7 @@ def text_to_speech(text, voice=""):
     response = requests.post(api_url, headers=headers, json=json_data)
     print('text to speech response:', response)
     return response.content
-    return None
+    
 
 
 def openai_process_message(user_message):
